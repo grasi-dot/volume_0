@@ -9,6 +9,7 @@ import InputBase from '@mui/material/InputBase';
 import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import CartWidget from '../Widgets/CartWidget';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -40,7 +41,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   width: '100%',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     [theme.breakpoints.up('sm')]: {
@@ -70,7 +70,7 @@ export default function SearchAppBar() {
             variant="h6"
             noWrap
             component="div"
-            sx={{display: { xs: 'none', sm: 'block' }, mr: 20 }}
+            sx={{ display: { xs: 'none', sm: 'block' }, mr: 20 }}
           >
             VOLUME ZERO
           </Typography>
@@ -83,16 +83,8 @@ export default function SearchAppBar() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          <Button 
-            color="inherit"
-            sx={{ mr: 2, ml: 20 }}
-          >
-            Carrinho
-          </Button>
-          <Button 
-            color="inherit"
-            sx={{ mr: 2 }}
-          >
+          <CartWidget />
+          <Button color="inherit" sx={{ mr: 2 }}>
             Login
           </Button>
         </Toolbar>
