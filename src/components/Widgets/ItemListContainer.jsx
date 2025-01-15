@@ -8,7 +8,7 @@ const ItemListContainer = ({ greeting }) => {
         <h2 className="text-primary">{greeting}</h2>
       </div>
       <div>
-        <ItemCount stock={5} initial={0}/>
+        <ItemCount stock={5} initial={1}/>
       </div>
     </div>
     
