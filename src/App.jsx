@@ -11,7 +11,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Header />
-      <ItemListContainer greeting="Ola a todos, e boas festas!" />
+      <ItemListContainer/>
     </ThemeProvider>
   )
 }

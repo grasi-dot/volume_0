@@ -33,19 +33,11 @@ function ItemCount({ stock, initial, onAdd }) {
         backgroundColor: '#f9f9f9',
       }}
     >
-      <h2
-        style={{
-          fontSize: '24px',
-          color: '#333',
-          marginBottom: '10px',
-        }}
-      >
-        {count}
-      </h2>
       <div
         style={{
           display: 'flex',
           justifyContent: 'center',
+          alignItems: 'center',
           gap: '20px',
           marginBottom: '10px',
         }}
@@ -61,6 +53,19 @@ function ItemCount({ stock, initial, onAdd }) {
         >
           -
         </button>
+  
+        <h2
+          style={{
+            fontSize: '24px',
+            color: '#333',
+            marginBottom: '0',
+            padding: '0 10px', 
+            width: '40px', // Tamanho fixo para o contador
+          }}
+        >
+          {count}
+        </h2>
+  
         <button
           onClick={add}
           disabled={count >= stock}
@@ -73,7 +78,7 @@ function ItemCount({ stock, initial, onAdd }) {
         >
           +
         </button>
-      </div>
+      </div> 
       <button
         onClick={handleOnAdd}
         disabled={stock === 0 || count === 0}
