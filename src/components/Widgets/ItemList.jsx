@@ -1,17 +1,15 @@
 import React from 'react';
-import Item from './Item';
 
-function ItemList({ items }) {
+function ItemList({ items, onItemClick }) {
   return (
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-        gap: '10px',
-      }}
-    >
+    <div className="item-list">
       {items.map((item) => (
-        <Item key={item.id} item={item} />
+        <div key={item.id} className="item">
+          <h3>{item.title}</h3>
+          <img src={item.image} alt={item.title} style={{ width: '100px', height: 'auto' }} />
+          <p>Preço: R$ {item.price}</p>
+          <button onClick={() => onItemClick(item.id)}>Ver Detalhes</button>
+        </div>
       ))}
     </div>
   );
